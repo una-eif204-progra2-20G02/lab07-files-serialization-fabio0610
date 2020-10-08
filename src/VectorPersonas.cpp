@@ -11,7 +11,7 @@ using namespace xmls;
 using namespace std;
 
 
-truct Persona : public Serializable{
+struct Persona : public Serializable{
 xString nombre;
 xInt edad;
 xInt id;

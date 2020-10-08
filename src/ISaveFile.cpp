@@ -3,3 +3,7 @@
 //
 
 #include "ISaveFile.h"
+
+ISaveFile::~ISaveFile() {
+
+}

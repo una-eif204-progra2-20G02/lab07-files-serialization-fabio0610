@@ -4,11 +4,12 @@
 
 #ifndef MY_PROJECT_NAME_ISAVEFILE_H
 #define MY_PROJECT_NAME_ISAVEFILE_H
-
-
+#include <iostream>
+using namespace std;
 class ISaveFile {
 public:
-
+    virtual ~ISaveFile();
+    virtual string saveData()=0;
 };
 
 

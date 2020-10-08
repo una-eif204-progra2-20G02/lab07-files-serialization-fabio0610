@@ -1,35 +1,48 @@
 //
 // Created by Fabio Villalobos on 8/10/2020.
 //
-#include "VectorPersonas.h"
+#include "ServicioPersonas.h"
 #include "XMLSerialization.h"
+#include "ISaveFile.h"
+#include "FileSaveManager.h"
 
 int main() {
-    VectorPersonas *arrayPers = new ServicioPersonasConPersistencia();
+
+    FileSaveManager filemanager;
+
+    ISaveFile *arrayPers = new VectorPersonas();
 
     auto *persona = new Persona;
 
-    persona->nombre = "Santiago";
-    persona->edad = 19;
-    persona->id = 604630008;
+    persona->nombre = "Fabio";
+    persona->edad = 21;
+    persona->id = 117560332;
 
 
-    arrayPers->insertar(persona);
+    arrayPers->;
 
     auto *persona1 = new Persona;
 
-    persona1->nombre = "Ariadna";
-    persona1->edad = 20;
+    persona1->nombre = "Mike";
+    persona1->edad = 25;
     persona1->id = 123456;
 
     arrayPers->insertar(persona1);
 
     auto *persona2 = new Persona;
 
-    persona2->nombre = "Angelo";
-    persona2->edad = 18;
+    persona2->nombre = "Ana";
+    persona2->edad = 30;
     persona2->id = 987654;
 
     arrayPers->insertar(persona2);
+
+    auto* persona3 = new Persona;
+
+    persona3->nombre = "Pedro";
+    persona3->edad = 20;
+    persona3->id = 54984894;
+
+    arrayPers->insertar(persona3);
 
 }

@@ -1,6 +1,9 @@
 //
 // Created by Fabio Villalobos on 8/10/2020.
 //
+
+#ifndef MY_PROJECT_NAME_VECTORPERSONAS_H
+#define MY_PROJECT_NAME_VECTORPERSONAS_H
 #include <iostream>
 #include <fstream>
 #include <string.h>
@@ -13,12 +16,12 @@ using namespace std;
 
 
 struct Persona : public Serializable{
-xString nombre;
-xInt edad;
-xInt id;
+    xString nombre;
+    xInt edad;
+    xInt id;
 
-Persona();
-string toString();
+    Persona();
+    string toString();
 
 };
 
@@ -74,3 +77,4 @@ public:
         return toString();
     }
 };
+#endif //MY_PROJECT_NAME_VECTORPERSONAS_H

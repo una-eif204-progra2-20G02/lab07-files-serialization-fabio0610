@@ -2,6 +2,8 @@
 // Created by Fabio Villalobos on 8/10/2020.
 //
 
+#ifndef MY_PROJECT_NAME_FILESAVEMANAGER_H
+#define MY_PROJECT_NAME_FILESAVEMANAGER_H
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -95,3 +97,4 @@ void leer() {
     }
     archivo.close();
 }
+#endif //MY_PROJECT_NAME_FILESAVEMANAGER_H

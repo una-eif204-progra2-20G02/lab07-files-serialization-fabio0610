@@ -6,6 +6,7 @@
 #include <string.h>
 #include <vector>
 #include <sstream>
+#include "ISaveFile.h"
 #include "XMLSerialization.h"
 using namespace xmls;
 using namespace std;
@@ -42,7 +43,9 @@ string Persona::toString() {
     }
 }
 
-class VectorPersonas : public Serializable {
+
+
+class VectorPersonas : public Serializable, public ISaveFile{
 public:
     Collection<Persona> array;
 
@@ -65,5 +68,9 @@ public:
 
     void insertar(Persona* persona) {
         array.addItem(persona);
+    }
+
+    string saveData(){
+        return toString();
     }
 };

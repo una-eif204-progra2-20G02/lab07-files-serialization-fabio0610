@@ -6,24 +6,43 @@
 #include <string.h>
 #include <vector>
 #include <sstream>
-
+#include "XMLSerialization.h"
+using namespace xmls;
 using namespace std;
 
-struct Persona{
-    char nombre[20];
-    int edad;
-    int id;
 
-    Persona() {}
+truct Persona : public Serializable{
+xString nombre;
+xInt edad;
+xInt id;
 
-    Persona(string _name, int _edad, int _id) {
-        strcpy(nombre, _name.c_str());
-        edad = _edad;
-        id = _id;
-    }
+Persona();
+string toString();
+
 };
 
-class VectorPersonas{
+//Definición de los métodos
+Persona::Persona()
+{
+    setClassName("Persona");
+    Register("Nombre", &nombre);
+    Register("Edad", &edad);
+    Register("Identificacion", &id);
+
+}
+
+string Persona::toString() {
+    {
+        ostringstream output;
+        output << "Nombre: " << nombre.value() << endl;
+        output << "Edad: " << edad.value() << endl;
+        output << "Identificacion: " << id.value() << endl;
+
+        return output.str();
+    }
+}
+
+class VectorPersonas : public Serializable {
 public:
     Collection<Persona> array;
 

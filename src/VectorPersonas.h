@@ -11,6 +11,7 @@
 #include <sstream>
 #include "ISaveFile.h"
 #include "XMLSerialization.h"
+#include "Persona.h"
 using namespace xmls;
 using namespace std;
 

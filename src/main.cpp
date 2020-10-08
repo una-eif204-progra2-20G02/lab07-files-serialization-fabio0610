@@ -2,15 +2,13 @@
 // Created by Fabio Villalobos on 8/10/2020.
 //
 #include "ServicioPersonas.h"
-#include "XMLSerialization.h"
-#include "ISaveFile.h"
 #include "FileSaveManager.h"
 
 int main() {
 
-    FileSaveManager filemanager;
+    FileSaveManager fileSaveManager;
 
-    ISaveFile *arrayPers = new VectorPersonas();
+    VectorPersonas *arrayPers = new ServicioPersonasConPersistencia();
 
     auto *persona = new Persona;
 
@@ -19,7 +17,7 @@ int main() {
     persona->id = 117560332;
 
 
-    arrayPers->;
+    arrayPers->insertar(persona);
 
     auto *persona1 = new Persona;
 
@@ -44,5 +42,8 @@ int main() {
     persona3->id = 54984894;
 
     arrayPers->insertar(persona3);
+
+    fileSaveManager.save(arrayPers);
+    fileSaveManager.guardar(arrayPers);
 
 }

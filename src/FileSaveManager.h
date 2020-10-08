@@ -8,8 +8,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "ISaveFile.h"
-#include "VectorPersona.h"
+#include "VectorPersonas.h"
+//#include "ISaveFile.h"
+
 using namespace std;
 
 class FileSaveManager {
@@ -18,19 +19,19 @@ public:
     FileSaveManager() {}
 
 
-    void save(ISaveFile *savedData) {
+    void save(VectorPersonas *array) {
         ofstream archivo;
         try { archivo.open("ArchivoBinario.dat", ios::app | ios::binary); }
 
         catch (std::ifstream::failure a) { cout << "no se pudo abrir el archivo"; }
 
-        archivo.write((char *) &savedData, sizeof(ISaveFile));
+        archivo.write((char *) &array, sizeof(VectorPersonas));
 
         archivo.close();
 
     }
 
-    void load(ISaveFile &savedData) {
+    void load(VectorPersonas *array) {
         ifstream archivo;
 
         try { archivo.open("ArchivoBinario.dat", ios::in | ios::binary); }
@@ -40,13 +41,13 @@ public:
             exit(1);
         }
 
-        archivo.read((char *) &savedData, sizeof(ISaveFile));
+        archivo.read((char *) &array, sizeof(VectorPersonas));
 
         archivo.close();
 
     }
 
-    void SeekgYTellg(ISaveFile &savedData) {
+    void SeekgYTellg(VectorPersonas *array) {
         ifstream archivo;
 
         try { archivo.open("ArchivoBinario.dat", ios::in | ios::binary); }
@@ -58,20 +59,20 @@ public:
 
         archivo.seekg(2 * sizeof(ISaveFile));
 
-        archivo.read((char *) &savedData, sizeof(ISaveFile));
+        archivo.read((char *) &array, sizeof(VectorPersonas));
         cout << "La lectura del archivo quedo en el byte: " << archivo.tellg();
 
         archivo.close();
     }
 
-    void guardar(ISaveFile *savedData) {
+    void guardar(VectorPersonas *array) {
         ofstream archivo;
         try { archivo.open("ArchivoTexto.txt", ios::app); }
         catch (std::ifstream::failure a) {
             cout << "no se pudo abrir el archivo";
             exit(1);
         }
-        archivo << savedData->saveData();
+        archivo << array->saveData();
         archivo.close();
     }
 

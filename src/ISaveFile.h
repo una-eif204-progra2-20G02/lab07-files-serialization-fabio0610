@@ -5,7 +5,7 @@
 #ifndef MY_PROJECT_NAME_ISAVEFILE_H
 #define MY_PROJECT_NAME_ISAVEFILE_H
 #include <iostream>
-#include "VectorPersonas.h"
+#include "Persona.h"
 using namespace std;
 class ISaveFile {
 public:

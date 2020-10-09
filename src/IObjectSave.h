@@ -6,7 +6,7 @@
 #define LAB07_FILES_SERIALIZATION_WEMS99_IOBJECTSAVE_H
 
 #include "Person.h"
-#include "PersonManager.h"
+#include <vector>
 #include <fstream>
 #include <iostream>
 #include <iomanip>

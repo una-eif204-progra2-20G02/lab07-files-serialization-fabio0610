@@ -8,7 +8,7 @@
 #include <vector>
 #include "IObjectSave.h"
 
-class PersonManager : public IObjecSave{
+class PersonManager : public IObjectSave{
 
 private:
 

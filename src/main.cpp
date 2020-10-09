@@ -27,19 +27,19 @@ int main(){
 
     personList = manager->addPerson(p1);
 
-    manager->save(saveAsBinary, personList);
+    manager->saveData(saveAsBinary, personList);
 
     personList = manager->addPerson(p2);
 
-    manager->save(saveAsBinary,personList);
+    manager->saveData(saveAsBinary,personList);
 
     personList = manager->addPerson(p3);
 
-    manager->save(saveAsBinary, personList);
+    manager->saveData(saveAsBinary, personList);
 
      //save as Json
 
-    manager->save(saveAsJson, personList);
+    manager->saveData(saveAsJson, personList);
 
 
 

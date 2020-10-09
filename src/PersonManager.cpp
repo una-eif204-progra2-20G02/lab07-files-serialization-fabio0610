@@ -52,7 +52,7 @@ void PersonManager::setPersonList(const vector<Person> &personList) {
     PersonManager::personList = personList;
 }
 
-void PersonManager::save(IObjectSave *objectSave, vector<Person> persons) {
+void PersonManager::saveData(IObjectSave *objectSave, vector<Person> persons) {
 
     objectSave->save(persons);
 

@@ -8,7 +8,7 @@
 #include <vector>
 #include "IObjectSave.h"
 
-class PersonManager : public IObjectSave{
+class PersonManager {
 
 private:
 
@@ -30,7 +30,7 @@ public:
 
     virtual ~PersonManager();
 
-    void save(IObjectSave* objectSave, vector<Person>);
+    void saveData(IObjectSave* objectSave, vector<Person>);
 
 };
 

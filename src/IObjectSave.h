@@ -6,10 +6,10 @@
 #define LAB07_FILES_SERIALIZATION_WEMS99_IOBJECTSAVE_H
 
 #include "Person.h"
-#include <vector>
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <vector>
 
 class IObjectSave {
 

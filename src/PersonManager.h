@@ -18,6 +18,8 @@ public:
 
     PersonManager(const vector<Person> &personList);
 
+    PersonManager();
+
     const vector<Person> getListPerson();
 
     const vector<Person> &getPersonList() const;

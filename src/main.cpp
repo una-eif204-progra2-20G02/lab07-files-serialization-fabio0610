@@ -12,7 +12,7 @@ int main(){
 
     vector<Person> personList;
 
-    PersonManager *manager;
+    PersonManager *manager = new PersonManager();
 
     IObjectSave *saveAsBinary = new SaveAsBinary();
     IObjectSave *saveAsJson = new SaveAsJson();
@@ -42,7 +42,9 @@ int main(){
     manager->saveData(saveAsJson, personList);
 
 
-
+    delete saveAsJson;
+    delete saveAsBinary;
+    delete manager;
 
     return 0;
 }

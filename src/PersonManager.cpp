@@ -57,3 +57,5 @@ void PersonManager::saveData(IObjectSave *objectSave, vector<Person> persons) {
     objectSave->save(persons);
 
 }
+
+PersonManager::PersonManager() {}

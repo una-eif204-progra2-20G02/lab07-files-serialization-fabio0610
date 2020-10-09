@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(lab07-files-serialization-wems99)
+project(my_project_name)
 
 set(CMAKE_CXX_STANDARD 14)
 

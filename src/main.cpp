@@ -1,49 +1,48 @@
 //
-// Created by Fabio Villalobos on 8/10/2020.
+// Created by Usuario on 7/10/2020.
 //
-#include "ServicioPersonas.h"
-#include "FileSaveManager.h"
 
-int main() {
+#include "IObjectSave.h"
+#include "Person.h"
+#include "SaveAsBinary.h"
+#include "SaveAsJson.h"
+#include "PersonManager.h"
 
-    FileSaveManager fileSaveManager;
+int main(){
 
-    VectorPersonas *arrayPers = new ServicioPersonasConPersistencia();
+    vector<Person> personList;
 
-    auto *persona = new Persona;
+    PersonManager *manager;
 
-    persona->nombre = "Fabio";
-    persona->edad = 21;
-    persona->id = 117560332;
+    IObjectSave *saveAsBinary = new SaveAsBinary();
+    IObjectSave *saveAsJson = new SaveAsJson();
+
+    Person p1(117430751, 21, "Allen");
+    Person p2(401256379, 44, "Brando Sanderson");
+    Person p3(501369458, 72, "Robert Jordan");
+
+    manager->setPersonList(personList);
+
+    //save as Binary
+
+    personList = manager->addPerson(p1);
+
+    manager->save(saveAsBinary, personList);
+
+    personList = manager->addPerson(p2);
+
+    manager->save(saveAsBinary,personList);
+
+    personList = manager->addPerson(p3);
+
+    manager->save(saveAsBinary, personList);
+
+     //save as Json
+
+    manager->save(saveAsJson, personList);
 
 
-    arrayPers->insertar(persona);
 
-    auto *persona1 = new Persona;
 
-    persona1->nombre = "Mike";
-    persona1->edad = 25;
-    persona1->id = 123456;
-
-    arrayPers->insertar(persona1);
-
-    auto *persona2 = new Persona;
-
-    persona2->nombre = "Ana";
-    persona2->edad = 30;
-    persona2->id = 987654;
-
-    arrayPers->insertar(persona2);
-
-    auto* persona3 = new Persona;
-
-    persona3->nombre = "Pedro";
-    persona3->edad = 20;
-    persona3->id = 54984894;
-
-    arrayPers->insertar(persona3);
-
-    fileSaveManager.save(arrayPers);
-    fileSaveManager.guardar(arrayPers);
-
+    return 0;
 }

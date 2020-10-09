@@ -11,7 +11,6 @@ class ISaveFile {
 public:
     virtual ~ISaveFile();
     virtual string saveData()=0;
-    virtual void insertar(Persona* persona) = 0;
 };
 
 
